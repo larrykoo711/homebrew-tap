@@ -7,18 +7,7 @@ class Bibo < Formula
   on_macos do
     on_arm do
       url "https://github.com/larrykoo711/bibo/releases/download/v#{version}/bibo-darwin-arm64.tar.gz"
-      sha256 "PLACEHOLDER_SHA256_ARM64"
-    end
-    on_intel do
-      url "https://github.com/larrykoo711/bibo/releases/download/v#{version}/bibo-darwin-x64.tar.gz"
-      sha256 "PLACEHOLDER_SHA256_X64"
-    end
-  end
-
-  on_linux do
-    on_intel do
-      url "https://github.com/larrykoo711/bibo/releases/download/v#{version}/bibo-linux-x64.tar.gz"
-      sha256 "PLACEHOLDER_SHA256_LINUX"
+      sha256 "73103813f024dd79c3152574a32a99ecb5f25592b69071862921f3585c24dcca"
     end
   end
 
@@ -28,15 +17,10 @@ class Bibo < Formula
     bin.install "bibo"
   end
 
-  def post_install
-    ohai "Installing Python dependencies..."
-    system "pip3", "install", "--user", "piper-tts"
-  end
-
   def caveats
     <<~EOS
       Bibo requires Python piper-tts for TTS synthesis.
-      If not installed automatically, run:
+      Install it with:
         pip3 install piper-tts
 
       Quick start:

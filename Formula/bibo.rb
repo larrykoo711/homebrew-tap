@@ -1,17 +1,19 @@
 class Bibo < Formula
-  desc "Fast, local neural text-to-speech CLI"
+  desc "Fast, local neural text-to-speech CLI. Zero dependencies."
   homepage "https://larrykoo711.github.io/bibo"
-  version "0.1.0"
+  version "0.3.1"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/larrykoo711/bibo/releases/download/v#{version}/bibo-darwin-arm64.tar.gz"
-      sha256 "73103813f024dd79c3152574a32a99ecb5f25592b69071862921f3585c24dcca"
+      sha256 "6fa709543e1586107808a6b6005710415fb4ffd42ade189ac529fff00dd670ad"
+    end
+    on_intel do
+      url "https://github.com/larrykoo711/bibo/releases/download/v#{version}/bibo-darwin-x64.tar.gz"
+      sha256 "617eab766232abf04e7722af5a4b14ee782f38e0e1350d16b9894aa5c39b5b5b"
     end
   end
-
-  depends_on "python@3.13"
 
   def install
     bin.install "bibo"
@@ -19,15 +21,16 @@ class Bibo < Formula
 
   def caveats
     <<~EOS
-      Bibo requires Python piper-tts for TTS synthesis.
-      Install it with:
-        pip3 install piper-tts
+      Bibo uses sherpa-onnx for neural TTS (auto-downloads on first run).
+      No Python or other dependencies required!
 
       Quick start:
-        bibo "Hello, world!"                 # Speak text
-        bibo -l                              # List available voices
+        bibo "Hello, world!"                 # Speak (downloads default voice)
+        bibo "你好世界" -v melo              # Chinese+English bilingual
+        bibo -l                              # List installed voices
+        bibo -d list                         # Show available voices
         bibo -d amy                          # Download a voice
-        bibo "Hello" -v amy -o hello.wav     # Save to file
+        bibo "Hello" -o hello.wav            # Save to file
     EOS
   end
 

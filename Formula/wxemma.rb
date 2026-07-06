@@ -1,9 +1,9 @@
 class Wxemma < Formula
   desc "Run multiple WeChat instances on macOS"
   homepage "https://github.com/larrykoo711/wechat-emma"
-  version "0.1.2"
-  url "https://github.com/larrykoo711/wechat-emma/releases/download/v0.1.2/wxemma-macos-universal.tar.gz"
-  sha256 "14970ef3b5803a931793ce7426abb800ced6ab53d9152c996899b34db3a2b08a"
+  version "0.1.4"
+  url "https://github.com/larrykoo711/wechat-emma/releases/download/v0.1.4/wxemma-macos-universal.tar.gz"
+  sha256 "9839fa43eb2fa84fb9abcc8ef00e9d72428fa903919001ef53693a332c39f20e"
   license "MIT"
 
   def install

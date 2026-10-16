@@ -19,6 +19,7 @@ brew install <formula>
 
 | Formula | What it is | Platforms | Project |
 |---------|------------|-----------|---------|
+| `cc-moss` | Recoverable Claude Code sessions in tmux | macOS, Linux | [larrykoo711/cc-moss](https://github.com/larrykoo711/cc-moss) |
 | `bibo` | Fast, local neural text-to-speech CLI | macOS | [larrykoo711/bibo](https://github.com/larrykoo711/bibo) |
 | `wxemma` | Run multiple WeChat instances on macOS | macOS | [larrykoo711/wechat-emma](https://github.com/larrykoo711/wechat-emma) |
 

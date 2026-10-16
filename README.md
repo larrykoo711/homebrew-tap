@@ -1,24 +1,39 @@
-# Homebrew Tap
+# larrykoo711/tap
 
-Custom Homebrew formulae for larrykoo711 projects.
+Homebrew formulae for [larrykoo711](https://github.com/larrykoo711)'s projects.
 
-## Installation
+## Install
 
-```bash
+```sh
+brew install larrykoo711/tap/<formula>
+```
+
+Or tap once, then install by name:
+
+```sh
 brew tap larrykoo711/tap
+brew install <formula>
 ```
 
-## Available Formulae
+## Formulae
 
-### bibo
+| Formula | What it is | Platforms | Project |
+|---------|------------|-----------|---------|
+| `bibo` | Fast, local neural text-to-speech CLI | macOS | [larrykoo711/bibo](https://github.com/larrykoo711/bibo) |
+| `wxemma` | Run multiple WeChat instances on macOS | macOS | [larrykoo711/wechat-emma](https://github.com/larrykoo711/wechat-emma) |
 
-Fast, local neural text-to-speech CLI.
+## How formulae are updated
 
-```bash
-brew install larrykoo711/tap/bibo
-```
+Each project's release workflow builds its binaries, publishes a GitHub Release and
+commits the new formula here. Pull requests run `brew style` and `brew audit` on
+every formula.
 
-## More Info
+## Issues
 
-- [Bibo GitHub](https://github.com/larrykoo711/bibo)
-- [Bibo Website](https://larrykoo711.github.io/bibo)
+A problem with a tool itself belongs in that project's issue tracker. A problem
+with installing it (a broken checksum, a missing dependency) is welcome
+[here](https://github.com/larrykoo711/homebrew-tap/issues).
+
+## License
+
+[MIT](LICENSE). Each formula installs software under that project's own license.

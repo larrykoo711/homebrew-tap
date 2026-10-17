@@ -1,29 +1,29 @@
 class CcMoss < Formula
   desc "Recoverable Claude Code sessions in tmux"
-  homepage "https://github.com/larrykoo711/cc-moss"
+  homepage "https://cc-moss.larrykoo.com"
   license "MIT"
 
   depends_on "tmux"
 
   on_macos do
     on_arm do
-      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.2.0/cc-moss-v0.2.0-aarch64-apple-darwin.tar.gz"
-      sha256 "38930ce4e3b133ff5c5612e9f198f3aee3abe38e1b0058cd08ab53adbf752289"
+      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.2.1/cc-moss-v0.2.1-aarch64-apple-darwin.tar.gz"
+      sha256 "ccb795af5a5e978f7d805690fd4398fd2aa33905cfce61ad0cfc5fa37d20f45f"
     end
     on_intel do
-      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.2.0/cc-moss-v0.2.0-x86_64-apple-darwin.tar.gz"
-      sha256 "f05d83e388fdadd0369d33952c20d9364e2db4438b8d3af560df8b45606f323f"
+      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.2.1/cc-moss-v0.2.1-x86_64-apple-darwin.tar.gz"
+      sha256 "8b8ab95180459a80823084c13ff5496417bf2e032885def19751be4411a07b24"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.2.0/cc-moss-v0.2.0-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "2217fe921c20e952a7a628d6501dcbd0370633b877b8ecda5ebf86fbc29178c5"
+      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.2.1/cc-moss-v0.2.1-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "aabd67a50c1c3773dd99c1feda4486738f86f82c916f493643b799a31880d738"
     end
     on_intel do
-      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.2.0/cc-moss-v0.2.0-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "26a35d17f8917c004443f7ab8ed0eded6fdd43bdaa237d39248d7b7bdec41099"
+      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.2.1/cc-moss-v0.2.1-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "594ececfb805b26ae35e7a75641ef631499d8db16476c86038811c3f31d34c47"
     end
   end
 

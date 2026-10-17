@@ -7,32 +7,35 @@ class CcMoss < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.1.1/cc-moss-v0.1.1-aarch64-apple-darwin.tar.gz"
-      sha256 "c4f49fa053bc25a53a1d242b601b8c1b4ff14d8d04469705fc00d8900e8a8235"
+      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.2.0/cc-moss-v0.2.0-aarch64-apple-darwin.tar.gz"
+      sha256 "38930ce4e3b133ff5c5612e9f198f3aee3abe38e1b0058cd08ab53adbf752289"
     end
     on_intel do
-      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.1.1/cc-moss-v0.1.1-x86_64-apple-darwin.tar.gz"
-      sha256 "66c922e02ae73552c787075d2bc2d6783396d8878d39233c866f33210ff2a59a"
+      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.2.0/cc-moss-v0.2.0-x86_64-apple-darwin.tar.gz"
+      sha256 "f05d83e388fdadd0369d33952c20d9364e2db4438b8d3af560df8b45606f323f"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.1.1/cc-moss-v0.1.1-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "9d21ef40505896ee57f0a1d1deb28a88ae820699293afa584468c6a354e624e5"
+      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.2.0/cc-moss-v0.2.0-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "2217fe921c20e952a7a628d6501dcbd0370633b877b8ecda5ebf86fbc29178c5"
     end
     on_intel do
-      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.1.1/cc-moss-v0.1.1-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "4a6cf91cd95765c9e4e5466fe3e64ca954b2386552c7374b97dd2fa1536bad99"
+      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.2.0/cc-moss-v0.2.0-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "26a35d17f8917c004443f7ab8ed0eded6fdd43bdaa237d39248d7b7bdec41099"
     end
   end
 
   def install
     bin.install "cc-moss"
+    # The menubar app, ad-hoc signed. `cc-moss install` copies it into
+    # ~/Applications: macOS sends its notifications only from there.
+    prefix.install "cc-moss.app" if OS.mac?
   end
 
   def caveats
-    <<~EOS
+    text = <<~EOS
       Set up the hooks, tmux and prompt (it shows every change and asks first):
         cc-moss install
         cc-moss doctor
@@ -42,9 +45,19 @@ class CcMoss < Formula
       it removes the hooks and every block it added, so Claude Code
       is not left calling a binary that is gone.
     EOS
+    if OS.mac?
+      text += <<~EOS
+
+        The menubar app came along too: `cc-moss install` asks, then puts it
+        in ~/Applications (macOS sends its notifications only from there), and
+        `cc-moss update` keeps it on the same version as cc-moss.
+      EOS
+    end
+    text
   end
 
   test do
     assert_match "cc-moss #{version}", shell_output("#{bin}/cc-moss --version")
+    assert_path_exists prefix/"cc-moss.app/Contents/Info.plist" if OS.mac?
   end
 end

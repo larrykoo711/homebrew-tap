@@ -7,23 +7,23 @@ class CcMoss < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.3.12/cc-moss-v0.3.12-aarch64-apple-darwin.tar.gz"
-      sha256 "6448f9136aa0326bcfe411f43f48c8dc8208174fc2fa094707526d5d731763e7"
+      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.3.13/cc-moss-v0.3.13-aarch64-apple-darwin.tar.gz"
+      sha256 "f028c8389d371f7f7c6d225ba8e2d455756b3caa5b46bd572368d850ad69329a"
     end
     on_intel do
-      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.3.12/cc-moss-v0.3.12-x86_64-apple-darwin.tar.gz"
-      sha256 "c832eeeb33e04a6856006d93d0c52cab32487e5cb6437bfaca61fb7d97ee960f"
+      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.3.13/cc-moss-v0.3.13-x86_64-apple-darwin.tar.gz"
+      sha256 "4faf63e63d8f6769ac91f2bab94e978fb44a78f52d9985f6438eec7c27153f75"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.3.12/cc-moss-v0.3.12-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "c27b26f868235d5e17f0decf6ed2a67fbed6b66a445ca88d8305fdff07df0d94"
+      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.3.13/cc-moss-v0.3.13-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "611f9c4e5f48c841993e41a16bc63c74cbdbf0b20172b8e6af370a6acb327895"
     end
     on_intel do
-      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.3.12/cc-moss-v0.3.12-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "c57372869f7d05cf6ef5a70652e20ff81113ded439a99ccc6fa039ea99bddd77"
+      url "https://github.com/larrykoo711/cc-moss/releases/download/v0.3.13/cc-moss-v0.3.13-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "9f6b2512dd1db97277f494f3f584b0f8fca2190839020c5b19d24b86fae161cf"
     end
   end
 

@@ -7,23 +7,23 @@ class TmuxHaha < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/larrykoo711/tmux-haha/releases/download/v0.1.0/tmux-haha-v0.1.0-aarch64-apple-darwin.tar.gz"
-      sha256 "57537c518f9d74c6838a88d585bc4487be45516ee550d8760e2ca0c950c981e6"
+      url "https://github.com/larrykoo711/tmux-haha/releases/download/v0.2.0/tmux-haha-v0.2.0-aarch64-apple-darwin.tar.gz"
+      sha256 "a3966b07536bb99738c832b84221c47d29c63bbecf243ec34bcae767ff9e3b3f"
     end
     on_intel do
-      url "https://github.com/larrykoo711/tmux-haha/releases/download/v0.1.0/tmux-haha-v0.1.0-x86_64-apple-darwin.tar.gz"
-      sha256 "774c9b0f172b947a2eac85fe4bb7483f5d5a0fe510cf1caee99717b37e0b1bae"
+      url "https://github.com/larrykoo711/tmux-haha/releases/download/v0.2.0/tmux-haha-v0.2.0-x86_64-apple-darwin.tar.gz"
+      sha256 "6793b4a37707ad65010b86548ca52d5a903a151b8ce65fc8db3963be762eba46"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/larrykoo711/tmux-haha/releases/download/v0.1.0/tmux-haha-v0.1.0-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "682816d4b83f5569da8c25b43003703aa5be632b28a0aa4b95fd0f0ce94709df"
+      url "https://github.com/larrykoo711/tmux-haha/releases/download/v0.2.0/tmux-haha-v0.2.0-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "1ab5e9dd4befe450b80a4dabe52c07b7a2f5fbc99b94458183693fe86ee40d9c"
     end
     on_intel do
-      url "https://github.com/larrykoo711/tmux-haha/releases/download/v0.1.0/tmux-haha-v0.1.0-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "67f39dd50946147696c7a03170ff09c64ae01ded4edb7830e8296f90dba2710e"
+      url "https://github.com/larrykoo711/tmux-haha/releases/download/v0.2.0/tmux-haha-v0.2.0-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "9f0126e15abed8c242fe4371e3268c767edd21271af35eefd88b77020ad5e59f"
     end
   end
 

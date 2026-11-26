@@ -1,27 +1,26 @@
 class Rax < Formula
-  desc "Zero-dependency CLI for Rax Cloud Channel Control Tower"
+  desc "Standalone zero-dependency CLI for Rax cloud tenant onboarding and verification"
   homepage "https://github.com/larrykoo711/rax-cli"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
-    on_arm do
-      url "https://github.com/larrykoo711/rax-cli/releases/download/v0.1.0/rax-v0.1.0-darwin-arm64.tar.gz"
-      sha256 "c6ce6250140d04b9e3698ba8f746eaaab8690f33bb0cac4979be96433eb3a671"
-    end
-    on_intel do
-      url "https://github.com/larrykoo711/rax-cli/releases/download/v0.1.0/rax-v0.1.0-darwin-amd64.tar.gz"
-      sha256 "092531e8c36ef3aed8d74d04210862d92d8fd961ddbf16a4471688dc8f4a0696"
+    if Hardware::CPU.arm?
+      url "https://github.com/larrykoo711/rax-cli/releases/download/v0.2.0/rax-v0.2.0-darwin-arm64.tar.gz"
+      sha256 "dcfc22bd1d0ea7792347b4fbe83ba8a31b7a996c6f5d9464690099ddce891778"
+    else
+      url "https://github.com/larrykoo711/rax-cli/releases/download/v0.2.0/rax-v0.2.0-darwin-amd64.tar.gz"
+      sha256 "144345cddbc7739d8153f1b8c4f06ccbb305de358e4042197809c58d718a46ec"
     end
   end
 
   on_linux do
-    on_arm do
-      url "https://github.com/larrykoo711/rax-cli/releases/download/v0.1.0/rax-v0.1.0-linux-arm64.tar.gz"
-      sha256 "9414420e02d1199856550a93866e77cf3d3d9ffa2847573f995d3fa3aff40a31"
-    end
-    on_intel do
-      url "https://github.com/larrykoo711/rax-cli/releases/download/v0.1.0/rax-v0.1.0-linux-amd64.tar.gz"
-      sha256 "669daa7f2c37391ddfb96b808786347a57479728cea050e6f23865b491c78064"
+    if Hardware::CPU.arm?
+      url "https://github.com/larrykoo711/rax-cli/releases/download/v0.2.0/rax-v0.2.0-linux-arm64.tar.gz"
+      sha256 "2f40f176ed6f3f9835ccea5e82fe1b41acfe18ff87df2da4a62e01599d0ed0f6"
+    else
+      url "https://github.com/larrykoo711/rax-cli/releases/download/v0.2.0/rax-v0.2.0-linux-amd64.tar.gz"
+      sha256 "bdfc4a70b41c40ce746afeb7008d68afc1b058728036a76c8684cfe2b64d6308"
     end
   end
 
@@ -29,17 +28,7 @@ class Rax < Formula
     bin.install "rax"
   end
 
-  def caveats
-    <<~EOS
-      Onboard an Azure tenant via native Device Code (no Python or az CLI needed):
-        rax azure onboard --slug <name> --apply
-
-      Verify a generated bundle:
-        rax azure verify --bundle ./rax-onboard-bundle.json
-    EOS
-  end
-
   test do
-    assert_match "rax #{version}", shell_output("#{bin}/rax --version")
+    assert_match "0.2.0", shell_output("#{bin}/rax --version")
   end
 end
